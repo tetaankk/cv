@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tero Ankkuri's website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            max-width: 650px;
+            margin: auto;
+            padding: 1rem;
+            background-color: rgb(241, 241, 241);
+            /* font-family: "Raleway", Arial, Helvetica, sans-serif; */
+            font-family: Georgia, serif;
+            /* font-family: 'Times New Roman', serif; */
+            font-size: 17px;
+            /* color: #121212 */
+            color: #444;
+            line-height: 1.6;
+        }
+
+        button {
+            align-self: flex-end;
+            margin: 2px;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: rgb(234, 234, 234);
+        }
+
+        .dark-mode a,
+        .dark-mode a:visited {
+            color: rgb(95, 95, 239)
+        }
+
+        footer {
+            bottom: 0;
+            margin-top: 10px;
+            padding-bottom: 5px;
+        }
+
+        a {
+            transition: all 0.1s;
+            color: #0077aa;
+        }
+
+        a:visited {
+            color: rgb(95, 95, 239)
+        }
+
+        h1,
+        h2,
+        h4 {
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+
+
+        h2 {
+            border-bottom: 1px solid;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 25px;
+        }
+
+        .coolSymbol {
+            display: inline-block;
+            transition: transform ease-in-out 0.25s;
+        }
+
+        .coolWord:hover .coolSymbol {
+            transform: rotate(90deg);
+            transition: transform ease-in-out 0.08s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .coolSymbol {
+                display: inline;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+
+            }
+        }
+
+        @media screen and (max-width: 250px) {
+            ul {
+                padding-left: 10px;
+            }
+
+            body {
+                padding: 0.5rem;
+            }
+        }
+
+        .butt {
+            display: flex;
+            flex-direction: row;
+            float: right;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="butt">
+        <button aria-label="toggle-color-theme" onclick="toggleDarkMode()">Toggle dark mode</button>
+        <button aria-label="save-page-as-html" onclick="savePageAsHtml()">Save CV as HTML</button>
+    </div>
+    <header>
+        <h1>Tero Ankkuri</h1>
+        <p>A <b>software developer</b>, among other things. <b>Two years</b> of active development experience, although I've been a friend of computers a bit longer, 20 years or so.</p>
+        <p>Programmed the first time at 12 years old with Python to see whether overclocking the CPU could prevent my PC from crashing when running wild calculations.</p>        
+        <p><u>Currently working at Solita</u> as a software developer. Before that I worked as a data analyst, IT auditor and a consultant, calculating carbon footprints.</p>
+    </header>
+    <main>
+        
+        <section>
+            <h2 class="coolWord">Keywords</h2>
+            <h4>Frontend</h4>
+            <ul>
+                <li>React (preferably TypeScript)</li>
+                <li>Tailwind, SCSS</li>
+                <li>Cypress</li>
+            </ul>
+            <h4>Backend</h4>
+            <ul>
+                <li>Node.js (preferably TypeScript)</li>
+                <li>Express.js</li>
+                <li>Next.js (API routes)</li>
+                <li>Jest</li>
+            </ul>
+            <h4>Databases</h4>
+            <ul>
+                <li>PostgreSQL</li>
+                <li>Firestore</li>
+                <li>MongoDB</li>
+            </ul>
+            <h4 class="coolWord">Cloud <span class="coolSymbol">&</span> infra</h4>
+            <ul style="gap: 5px">
+                <li>Google Cloud (Firebase & Cloud Functions)</li>
+                <li>GitHub Actions</li>
+                <li>Docker</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <h4>University of Jyväskylä, 2015-2021</h4>
+            <ul>
+                <li>Master of Science (Econ. & B. A.), Corporate Environmental Management</li>
+                <li>Bachelor of Science (Econ. & B. A.), Information System Science</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="coolWord">Find <span class="coolSymbol">&</span> contact</h2>
+            <ul>
+                <li>
+                    <a target="_blank" rel="noreferrer noopener" href="https://www.linkedin.com/in/tero-ankkuri/">
+                        LinkedIn profile
+                    </a>
+                </li>
+                <li>
+                    <a class="coolWord" target="_blank" rel="noreferrer noopener" href="#">
+                        GitHub profile
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>This site</h2>
+            <p>Is a CV. Inspired by <a target="_blank" href="https://motherfuckingwebsite.com/">this</a>. </p>
+        </section>
+    </main>
+
+    <footer>
+        <h6 style="text-align:center" class="coolWord"><span class="coolSymbol">&#169;</span> Tero Ankkuri, 2023</h6>
+        </div>
+    </footer>
+
+    
+
+    <script>
+        function savePageAsHtml() {
+          // Get the current page content
+          var htmlContent = document.documentElement.outerHTML;
+    
+          // Create a Blob with the HTML content
+          var blob = new Blob([htmlContent], { type: 'text/html' });
+    
+          // Create a temporary <a> element and set its attributes
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'cv_teroankkuri.html';
+    
+          // Append the <a> element to the document and trigger the download
+          document.body.appendChild(a);
+          a.click();
+    
+          // Clean up
+          document.body.removeChild(a);
+        }
+      </script>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+
+</html>
