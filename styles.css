@@ -1,0 +1,108 @@
+body {
+    max-width: 800px;
+    margin: auto;
+    padding: 1.5rem;
+    background-color: rgb(241, 241, 241);
+    font-family: "andale mono", monospace;
+    /* font-family: "Courier New", monospace; */
+    /* font-family: 'Monaco', monospace; */
+    /* font-family: 'Verdana', sans-serif; */
+    /* font-family: 'Inconsolata', monospace; */
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Raleway', sans-serif; */
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+header {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:0;
+}
+
+.skillCategory {
+    margin:  0 1rem 1rem 1rem;
+    width: 100px;
+}
+
+ul {
+    list-style-type: "> ";
+    padding-left:8px;
+}
+
+dt::before,
+dd:before {
+    content: "> "
+}
+
+dd {
+    font-size: 14px;
+}
+
+
+button {
+    margin: 2px;
+    font-family: "VT323", monospace;
+    padding: 0.1rem;
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: rgb(234, 234, 234);
+}
+
+.dark-mode a,
+.dark-mode a:visited {
+    color: #0077aa;
+}
+
+footer {
+    bottom: 0;
+    margin-top: 5rem;
+}
+
+a,
+a:visited {
+    transition: all 0.1s;
+    color: #0077aa;
+}
+
+a:hover {
+    letter-spacing: 1px;
+}
+
+h1 {
+    letter-spacing: 5px;
+}
+
+h2,
+h4 {
+    border-bottom: 1px solid;
+}
+
+@media screen and (max-width: 250px) {
+    body {
+        padding: 0.5rem;
+    }
+}
