@@ -2,15 +2,12 @@ body {
     max-width: 800px;
     margin: auto;
     padding: 1.5rem;
-    background-color: rgb(241, 241, 241);
-    font-family: "andale mono", monospace;
-    /* font-family: "Courier New", monospace; */
-    /* font-family: 'Monaco', monospace; */
-    /* font-family: 'Verdana', sans-serif; */
-    /* font-family: 'Inconsolata', monospace; */
-    /* font-family: 'Montserrat', sans-serif; */
-    /* font-family: 'Raleway', sans-serif; */
-    /* font-family: 'Poppins', sans-serif; */
+    /* background-color: rgb(241, 241, 241); */
+    background-color: rgb(206, 206, 206);
+    /* font-family: "andale mono", monospace; */
+    /* font-family: "Alliance No. 2",sans-serif; */
+    /* font-family: "Graphik", sans-serif; */
+    font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     color: #444;
     line-height: 1.6;
@@ -54,9 +51,32 @@ dd {
     font-size: 14px;
 }
 
+summary:hover {
+    cursor: pointer;
+}
+
+summary:hover::after {
+    opacity: 1;
+    transition-delay: 2.5s;
+    transition: 0.5s all;
+}
+
+details p {
+    border: 3px dotted;
+    padding: 1rem;
+    margin-left: 1.5rem;
+}
+
+summary::marker {
+    content: "+ ";
+}
+
+details[open] summary::marker {
+    content: "- ";
+}
 
 button {
-    margin: 2px;
+    margin: 0 2px;
     font-family: "VT323", monospace;
     padding: 0.1rem;
     cursor: pointer;
@@ -76,6 +96,7 @@ button {
 .dark-mode a:visited {
     color: #0077aa;
 }
+
 
 footer {
     bottom: 0;
@@ -106,3 +127,4 @@ h4 {
         padding: 0.5rem;
     }
 }
+  
