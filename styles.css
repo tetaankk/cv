@@ -1,27 +1,39 @@
+:root {
+    --light-theme-text-color: rgb(23, 23, 26);
+    /* --light-theme-background-color: rgb(241, 241, 241); */
+    --light-theme-background-color: rgb(228, 228, 228);
+    
+    --dark-theme-text-color: rgb(241, 241, 241);
+    --dark-theme-background-color:rgb(36, 36, 40);
+
+    --light-theme-button-hover-color: gray;
+    --dark-theme-button-hover-color: orange;
+}
+
 body {
     max-width: 800px;
     margin: auto;
-    padding: 1.5rem;
-    /* background-color: rgb(241, 241, 241); */
-    background-color: rgb(206, 206, 206);
-    /* font-family: "andale mono", monospace; */
-    /* font-family: "Alliance No. 2",sans-serif; */
-    /* font-family: "Graphik", sans-serif; */
-    font-family: 'Quicksand', sans-serif;
+    padding: 1rem;
+    /* padding-top: 0; */
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    color: #444;
     line-height: 1.6;
+    background-color: var(--light-theme-background-color);
+    color: var(--light-theme-text-color);
+}
+
+.hide {
+    display: none;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 5rem;
 }
 
-header {
+section {
     text-align: center;
-    margin-top: 3rem;
 }
 
 .skills {
@@ -29,36 +41,35 @@ header {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    margin:0;
+    padding: 0;
 }
 
 .skillCategory {
-    margin:  0 1rem 1rem 1rem;
-    width: 100px;
+    margin: 1rem;
+    width: 90px;
+    height: 100%;
+    padding: 0;
 }
 
 ul {
-    list-style-type: "> ";
+    list-style-type: none;
+    text-align: left;
     padding-left:8px;
+    padding-bottom: 0;
 }
 
-dt::before,
-dd:before {
-    content: "> "
-}
-
-dd {
-    font-size: 14px;
+summary {
+    padding-left: 1rem;
+    transition: 0.15s all;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 summary:hover {
     cursor: pointer;
-}
-
-summary:hover::after {
-    opacity: 1;
-    transition-delay: 2.5s;
-    transition: 0.5s all;
+    color: var(--light-theme-button-hover-color);
+    transition: 0.15s all;
 }
 
 details p {
@@ -76,50 +87,59 @@ details[open] summary::marker {
 }
 
 button {
-    margin: 0 2px;
-    font-family: "VT323", monospace;
+    font-size: 16px;
     padding: 0.1rem;
     cursor: pointer;
+    margin: 0.5rem;
+    border: none;
+    background-color: transparent;
 }
 
-.button-group {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.dark-mode {
-    background-color: #121212;
-    color: rgb(234, 234, 234);
-}
-
-.dark-mode a,
-.dark-mode a:visited {
-    color: #0077aa;
-}
-
-
-footer {
-    bottom: 0;
-    margin-top: 5rem;
+li a:hover,
+a:hover,
+button:hover {
+    cursor: pointer;
+    color: var(--light-theme-button-hover-color);
 }
 
 a,
 a:visited {
-    transition: all 0.1s;
-    color: #0077aa;
+    color: var(--light-theme-text-color);
 }
 
-a:hover {
-    letter-spacing: 1px;
+.dark-mode,
+.dark-mode button {
+    background-color: var(--dark-theme-background-color);
+    color:var(--dark-theme-text-color)
 }
+
+.dark-mode li a:hover,
+.dark-mode button:hover {
+    color: var(--dark-theme-background-color)
+}
+
+.dark-mode a,
+.dark-mode a:visited {
+    color: var(--dark-theme-text-color);
+}
+
+.dark-mode a:hover {
+    color: var(--light-theme-button-hover-color);
+}
+
+
 
 h1 {
-    letter-spacing: 5px;
+    margin: 0;
 }
 
-h2,
+h2 {
+    margin-bottom: 1rem;
+}
+
 h4 {
     border-bottom: 1px solid;
+    margin: 0;
 }
 
 @media screen and (max-width: 250px) {
@@ -127,4 +147,57 @@ h4 {
         padding: 0.5rem;
     }
 }
+
+nav {
+    text-align: center;
+    display: inline-block;
+    border: 1px solid gray; 
+    border-radius: 50px;
+    overflow: hidden;
+    transition: 0.05s all;
+}
+
+.nav-button {
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    padding: 1rem;
+    transition: 0.05s all;
+}
+
+.nav-button:hover {
+    background-color: orange;
+    color: black;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 40px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: 0.2s all;
+  }
   
+  .fa:hover {
+    opacity: 0.85;
+    transition: 0.2s all;
+    transform: scale(1.04);
+  }
+  
+  .fa-github {
+    background: orange;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background: #0077B5;
+    color: white;
+  }
+
+  .info-view {
+    display: flex; 
+    flex-direction: column; 
+    gap: 3rem;
+  }

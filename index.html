@@ -6,39 +6,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div class="button-group">
-        <button aria-label="save-page-as-html" onclick="savePageAsHtml()">Save CV as HTML</button>
-        <button aria-label="toggle-color-theme" onclick="toggleDarkMode()">Toggle dark mode</button>
-    </div>
     <main>
-        <header>
-            <h1>TERO ANKKURI</h1>
-            <p>Developer with two years of experience. Currently working at Solita.</p>
-            <p></p>
-            <aside>
-                <ul style="list-style-type: none">
-                    <li>
-                        <a target="_blank" rel="noreferrer noopener" href="https://www.linkedin.com/in/tero-ankkuri/">
-                            LinkedIn
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" rel="noreferrer noopener" href="https://github.com/tetaankk">
-                            GitHub
-                        </a>
-                    </li>
-                </ul>
-            </aside>
+        <header style="text-align: center;">
+            <nav>
+                <button class="nav-button" id="info-view-button" style="text-decoration: underline;" data-nav-view="info-view">About</button>
+                <button class="nav-button" id="skills-view-button" data-nav-view="skills-view">Skills</button>
+                <button class="nav-button" id="work-view-button" data-nav-view="work-view">Background</button>
+                <button title="Switch color scheme" class="nav-button" alt="" onclick="toggleDarkMode()">
+                    <svg width=10 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                </button>
+            </nav>
         </header>
-        <section>
+        <section class="view" id="info-view">
+            <div class="info-view">
+                <h1 style="font-size: 50px;">Tero Ankkuri</h1>
+                <p>Developer with two years of experience in the field. Currently working at Solita.</p>
+                <div style="display: flex; flex-direction: row; gap: 1rem; justify-content: center;">
+                    <a title="My GitHub profile" target="_blank" rel="noreferrer noopener" href="https://github.com/tetaankk">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <a title="My LinkedIn profile" target="_blank" rel="noreferrer noopener" href="https://www.linkedin.com/in/tero-ankkuri/">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+                <address style="font-style: normal;">
+                    <a href=" mailto:teroankkuri@gmail.com">teroankkuri@gmail.com</a>
+                </address>
+            </div>
+        </section>
+        <section class="view hide" id="skills-view">
             <h2>Some of the tools I've worked with</h2>
             <div class="skills">
                 <section class="skillCategory">
@@ -72,7 +86,6 @@
                         <li>Jest</li>
                     </ul>
                 </section>
-
                 <section class="skillCategory">
                     <h4>Infra</h4>
                     <ul>
@@ -82,64 +95,70 @@
                     </ul>
                 </section>
             </div>
-            <p style="font-size: 12px;">...and keen on learning more!</p>
+            <p>...and keen on learning more!</p>
         </section>
-
-        <section>
-            <h2>Work history</h2>
-            <dl>
-                <details>
-                    <summary>Software developer, Solita, 2021-</summary>
-                    <p>
-                        I've mainly worked as one of the two main developers creating a carbon footprint calculator from scratch.
-                        It was a React app hosted in Firebase using Firestore as a database and Google Cloud Functions as the backend.
-                        Tailwind for styling, Cypress and Jest for testing.
-                    </p>
-                </details>
-                <dt>Analyst, UseLess Company, 2020-2021 (calculating carbon footprints)</dt>
-                <dt>Trainee & Associate, PwC, 2019-2020 (data analyses, IT audits)</dt>
-            </dl>
-        </section>
-
-        <section>
+        <section class="view hide" id="work-view">
+            <h2>Work</h2>
+            <details>
+                <summary>Software developer, Solita, 2021-</summary>
+                <p>
+                    I've mainly worked as one of the two main developers creating a carbon footprint calculator from scratch.
+                    It was a React app hosted in Firebase using Firestore as a database and Google Cloud Functions as the backend.
+                    Tailwind for styling, Cypress and Jest for testing.
+                </p>
+            </details>
+            <details>
+                <summary>Analyst, UseLess Company, 2020-2021</summary>
+                <p>Researching & calculating carbon footprints for small and medium sized enterprises.</p>
+            </details>
+            <details>
+                <summary>Trainee & Associate, PwC, 2019-2020</summary>
+                <p>Data analyses, IT audits</p>
+            </details>
             <h2>University of Jyväskylä, 2015-2021</h2>
-            <dl>
-                <dt>Bachelor of Science (Econ. & B. A.), Information System Science</dt>
-                <dd>Thesis: <i>On blockchain technology and consensus mechanisms</i></li>
-                <dt>Master of Science (Econ. & B. A.), Corporate Environmental Management</dt>
-                <dd>Thesis: <i>Climate impacts of small expert companies : Case study</i></dd>
-            </dl>
+            <details>
+                <summary>Bachelor of Science (Econ. & B. A.), Information System Science</summary>
+                <p>Thesis: <i>On blockchain technology and consensus mechanisms</i></p>
+            </details>
+            <details>
+                <summary>Master of Science (Econ. & B. A.), Corporate Environmental Management</summary>
+                <p>Thesis: <i>Climate impacts of small expert companies : Case study</i></p>
+            </details>
         </section>
     </main>
-
-    <footer>
-        <h6 style="text-align:center; margin:0;">Tero Ankkuri, 2023</h6>
-    </footer>
-
-    <script>
-        function savePageAsHtml() {
-            // Get the current page content
-            var htmlContent = document.documentElement.outerHTML;
-
-            // Create a Blob with the HTML content
-            var blob = new Blob([htmlContent], { type: 'text/html' });
-
-            // Create a temporary <a> element and set its attributes
-            var a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'cv_teroankkuri.html';
-
-            // Append the <a> element to the document and trigger the download
-            document.body.appendChild(a);
-            a.click();
-
-            // Clean up
-            document.body.removeChild(a);
-        }
-    </script>
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
+        }
+
+        function showView(viewName) {
+            var views = document.getElementsByClassName('view');
+            for (var i = 0; i < views.length; i++) {
+                views[i].style.display = 'none';
+            }
+
+            document.getElementById(viewName).style.display = 'block';
+
+            // set all buttons black
+            var navButtons = document.querySelectorAll('[data-nav-view]');
+            for (var i = 0; i < navButtons.length; i++) {
+                var id = navButtons[i].getAttribute('id');
+                document.getElementById(id).style.color = document.querySelector('body').style.color;
+                document.getElementById(id).style.textDecoration = 'none';
+            }
+
+            // set current button styling
+            document.getElementById(`${viewName}-button`).style.textDecoration = 'underline';
+        }
+
+        var navButtons = document.querySelectorAll('[data-nav-view]');
+        for (var i = 0; i < navButtons.length; i++) {
+            navButtons[i].addEventListener('click', function (e) {
+                e.preventDefault();
+                var viewName = this.getAttribute('data-nav-view');
+                var id = this.getAttribute('id');
+                showView(viewName);
+            });
         }
     </script>
 </body>
