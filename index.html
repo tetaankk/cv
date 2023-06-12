@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- (c) Tero Ankkuri 2023 -->
 <html lang="en">
 
 <head>
@@ -9,102 +10,90 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <main>
+
         <header>
-            <h6>tero<span style="color: darkgray;">ankkuri</span></h6>
+
+            <h1>tero<span style="color: darkgray;">ankkuri</span></h1>
             <nav>
-                <button class="nav-button" id="info-view-button" data-nav-view="info-view" style="opacity: 0.7;">About</button>
-                <button class="nav-button" id="skills-view-button" data-nav-view="skills-view">Skills</button>
-                <button class="nav-button" id="work-view-button" data-nav-view="work-view">Background</button>
-                <button class="nav-button contrast" title="Switch color scheme" onclick="toggleDarkMode()">
-                    <svg style="align-self: stretch;" width="19" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="m11.998 2c5.517 0 9.997 4.48 9.997 9.998 0 5.517-4.48 9.997-9.997 9.997-5.518 0-9.998-4.48-9.998-9.997 0-5.518 4.48-9.998 9.998-9.998zm0 1.5c-4.69 0-8.498 3.808-8.498 8.498s3.808 8.497 8.498 8.497z"
-                            fill-rule="nonzero" />
-                    </svg>
-                </button>
+                <button id="info-view-button" data-nav-view="info-view" style="background-color: green;">Home</button>
+                <button id="skills-view-button" data-nav-view="skills-view">Skills</button>
+                <button id="work-view-button" data-nav-view="work-view">Background</button>
+                <button onclick="toggleDarkMode()">Dark mode</button>
             </nav>
         </header>
         <section class="view" id="info-view">
-            <div class="info-view">
-                <!-- <h1 style="font-size: 50px;">Tero Ankkuri</h1> -->
-                <p style="max-width: 400px; align-self: center;">Hi! My name is Tero and I'm a <strong>software developer</strong> with two years of
-                    experience
-                    in the
-                    field. Currently
-                    working at Solita.</p>
-                <div style="display: flex; flex-direction: row; gap: 1rem; justify-content: center;box-sizing: border-box;">
-                    <a title="My GitHub profile" target="_blank" rel="noreferrer noopener" href="https://github.com/tetaankk">
-                        <svg class="icon github" xmlns="http://www.w3.org/2000/svg" width="50" viewBox="0 0 24 24">
-                            <path
-                                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2.218 18.616c-.354.069-.468-.149-.468-.336v-1.921c0-.653-.229-1.079-.481-1.296 1.56-.173 3.198-.765 3.198-3.454 0-.765-.273-1.389-.721-1.879.072-.177.312-.889-.069-1.853 0 0-.587-.188-1.923.717-.561-.154-1.159-.231-1.754-.234-.595.003-1.193.08-1.753.235-1.337-.905-1.925-.717-1.925-.717-.379.964-.14 1.676-.067 1.852-.448.49-.722 1.114-.722 1.879 0 2.682 1.634 3.282 3.189 3.459-.2.175-.381.483-.444.936-.4.179-1.413.488-2.037-.582 0 0-.37-.672-1.073-.722 0 0-.683-.009-.048.426 0 0 .46.215.777 1.024 0 0 .405 1.25 2.353.826v1.303c0 .185-.113.402-.462.337-2.782-.925-4.788-3.549-4.788-6.641 0-3.867 3.135-7 7-7s7 3.133 7 7c0 3.091-2.003 5.715-4.782 6.641z" />
-                        </svg>
+            <fieldset>
+                <legend>About</legend>
+                <p>Hi there! My name is Tero and I'm a <strong>software developer</strong> with two
+                    years of experience in the field. Currently working at Solita.</p>
+                <div class="img-container">
+                    <img src="avatar.jpeg" loading="lazy" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Contact</legend>
+                <div
+                    style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center; margin-bottom: 1rem;">
+                    <a class="link github" title="My GitHub profile" target="_blank" rel="noreferrer noopener" href="https://github.com/tetaankk">
+                        GitHub
                     </a>
-                    <a title="My LinkedIn profile" target="_blank" rel="noreferrer noopener" href="https://www.linkedin.com/in/tero-ankkuri/">
-                        <svg class="linkedin icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
-                            <path
-                                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
-                        </svg>
+                    <a class="link linkedin" title="My LinkedIn profile" target="_blank" rel="noreferrer noopener"
+                        href="https://www.linkedin.com/in/tero-ankkuri/">
+                        LinkedIn
                     </a>
                 </div>
-                <address style="font-style: normal;">
-                    <a href=" mailto:teroankkuri@gmail.com">teroankkuri@gmail.com</a>
+                <address style="font-style: normal; font-size: 12px; word-wrap:normal;">
+                    teroankkuri@gmail.com
                 </address>
-            </div>
+            </fieldset>
+
         </section>
         <section class="view hide" id="skills-view">
             <h2>Some of the tools I've worked with</h2>
-            <div class="skills">
-                <section class="skillCategory">
-                    <h4>Frontend</h4>
+            <div style="display: flex; flex-wrap: wrap; flex-direction: column; gap: 2rem; font-size: 12px;">
+                <fieldset>
+                    <legend>Frontend</legend>
                     <ul>
                         <li>React</li>
                         <li>Next.js</li>
                         <li>Tailwind</li>
                     </ul>
-                </section>
-                <section class="skillCategory">
-                    <h4>Backend</h4>
+                </fieldset>
+                <fieldset>
+                    <legend>Backend</legend>
                     <ul>
                         <li>Node</li>
                         <li>Next.js</li>
-                        <li>Express.js</li>
+                        <li>Express</li>
                     </ul>
-                </section>
-                <section class="skillCategory">
-                    <h4>Databases</h4>
+                </fieldset>
+                <fieldset>
+                    <legend>Databases</legend>
                     <ul>
                         <li>PostgreSQL</li>
                         <li>Firestore</li>
                         <li>MongoDB</li>
                     </ul>
-                </section>
-                <section class="skillCategory">
-                    <h4>Testing</h4>
-                    <ul>
-                        <li>Cypress</li>
-                        <li>Jest</li>
-                    </ul>
-                </section>
-                <section class="skillCategory">
-                    <h4>Infra</h4>
+                </fieldset>
+                <fieldset>
+                    <legend>Infra</legend>
                     <ul>
                         <li>GCP</li>
                         <li>Docker</li>
                         <li>GitHub Actions</li>
                     </ul>
-                </section>
+                </fieldset>
             </div>
             <p>...and keen on learning more!</p>
         </section>
         <section class="view hide" id="work-view">
-            <section>
-                <h2>Work</h2>
+            <fieldset>
+                <legend>Work experience</legend>
                 <details>
                     <summary>Software developer, Solita, 2021-</summary>
                     <p>
@@ -121,9 +110,10 @@
                     <summary>Trainee & Associate, PwC, 2019-2020</summary>
                     <p>Data analyses, IT audits</p>
                 </details>
-            </section>
-            <section>
-                <h2>University of Jyväskylä, 2015-2021</h2>
+            </fieldset>
+
+            <fieldset>
+                <legend>University of Jyväskylä, 2015-2021</legend>
                 <details>
                     <summary>Bachelor of Science (Econ. & B. A.), Information System Science</summary>
                     <p>Thesis: <i>On blockchain technology and consensus mechanisms</i></p>
@@ -132,12 +122,15 @@
                     <summary>Master of Science (Econ. & B. A.), Corporate Environmental Management</summary>
                     <p>Thesis: <i>Climate impacts of small expert companies : Case study</i></p>
                 </details>
-            </section>
+            </fieldset>
         </section>
     </main>
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
+
+            var darkModeCheckbox = document.getElementById("darkmode");
+            darkModeCheckbox.checked = !darkModeCheckbox.checked;
         }
 
         function showView(viewName) {
@@ -146,20 +139,22 @@
                 views[i].style.display = 'none';
             }
 
-            document.getElementById(viewName).style.display = 'block';
+            document.getElementById(viewName).style.display = 'flex';
 
             // set all buttons black
             var navButtons = document.querySelectorAll('[data-nav-view]');
             for (var i = 0; i < navButtons.length; i++) {
                 var id = navButtons[i].getAttribute('id');
                 document.getElementById(id).style.color = document.querySelector('body').style.color;
-                document.getElementById(`${viewName}-button`).style.opacity = 1;
-                document.getElementById(id).style.opacity = 1;
+                document.getElementById(id).style.backgroundColor = '';
             }
 
             // set current button styling
-            // document.getElementById(`${viewName}-button`).style.textDecoration = 'underline';
-            document.getElementById(`${viewName}-button`).style.opacity = 0.5
+            document.getElementById(`${viewName}-button`).style.backgroundColor = 'green';
+        }
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.toggle("dark-mode");
         }
 
         var navButtons = document.querySelectorAll('[data-nav-view]');
