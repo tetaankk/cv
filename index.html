@@ -23,7 +23,7 @@
                 <button id="info-view-button" data-nav-view="info-view" style="background-color: green;">Home</button>
                 <button id="skills-view-button" data-nav-view="skills-view">Skills</button>
                 <button id="work-view-button" data-nav-view="work-view">Background</button>
-                <button onclick="toggleDarkMode()">Dark mode</button>
+                <button onclick="toggleDarkMode()">Color scheme</button>
             </nav>
         </header>
         <section class="view" id="info-view">
@@ -54,21 +54,28 @@
 
         </section>
         <section class="view hide" id="skills-view">
-            <h2>Some of the tools I've worked with</h2>
+            <h2>Main tools I've worked with</h2>
             <div style="display: flex; flex-wrap: wrap; flex-direction: column; gap: 2rem; font-size: 12px;">
+                <fieldset>
+                    <legend>Languages</legend>
+                    <ul>
+                        <li>TypeScript</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </fieldset>
                 <fieldset>
                     <legend>Frontend</legend>
                     <ul>
                         <li>React</li>
                         <li>Next.js</li>
                         <li>Tailwind</li>
+                        <li>SCSS</li>
                     </ul>
                 </fieldset>
                 <fieldset>
                     <legend>Backend</legend>
                     <ul>
                         <li>Node</li>
-                        <li>Next.js</li>
                         <li>Express</li>
                     </ul>
                 </fieldset>
